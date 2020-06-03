@@ -4,8 +4,10 @@
     <br><br>
     
 </h3>
-## :rocket: Tecnologias Utilizadas
+##:rocket: Tecnologias Utilizadas
+
 O projeto foi desenvolvido utilizando as seguintes tecnologias
+
 - [TypeScript](https://www.typescriptlang.org/)
 - [Node.js](https://nodejs.org/en/)
 - [ReactJS](https://reactjs.org/)
