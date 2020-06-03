@@ -1,19 +1,17 @@
-# O Ecoleta é uma aplicação Web e Mobile para ajudar pessoas a encontrarem pontos de coleta para reciclagem.
+# Ecoleta -  é uma aplicação que auxilia pessoas a encontrarem pontos de coleta para reciclagem. 
 <h3 align="center">
     <img alt="Logo" title="#logo" width="300px" src="assets/home-background.svg">
     <br><br>
     
 </h3>
-##:rocket: Tecnologias Utilizadas
+##:rocket: Abaixo temos as Tecnologias Utilizadas no Projeto
 
-O projeto foi desenvolvido utilizando as seguintes tecnologias
-
-- [TypeScript](https://www.typescriptlang.org/)
-- [Node.js](https://nodejs.org/en/)
 - [ReactJS](https://reactjs.org/)
 - [React Native](https://reactnative.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Node.js](https://nodejs.org/en/)
 
-## Iniciando o **Node.JS**
+## Como iniciar o **Node.JS**
 ### Para iniciar um projeto node utilizar:
 ```bash
 $ npm init -y
@@ -29,29 +27,16 @@ $ npm install @types/express -D
 **Obs:** "-D" para dependência de desenvolvimento! 
 <br/>
 
-### Instalando o TS
+### Instalando o TypeScript
 ```bash
 $ npm install ts-node -D
 $ npm install typescript -D
 ```
 <br/>
 
-### Criando arquivo de configuração TS
+### Criando arquivo de configuração TypeScript
 ```bash
 $ npx tsc --init
-```
-<br/>
-
-### Gerando JS
-```bash
-$ npx ts-node <dir>
-```
-<br/>
-
-### Pacote para reiniciar o server automaticamente
-```bash
-$ npm install ts-node-dev -D
-$ npx ts-node-dev <dir>
 ```
 <br/>
 
@@ -60,7 +45,7 @@ $ npx ts-node-dev <dir>
 Em *package.json*:
 ```json
 "scripts": {
-  "dev": "ts-node-dev <dir>"
+  "dev": "ts-node-dev src/server.ts"
 }
 ```
 ```bash
@@ -74,3 +59,6 @@ $ yarn dev
 ```bash
 $ npx create-react-app web --template=typescript
 ```
+##Instalando o Knex para banco de dados
+````bash
+$ npm install knex
