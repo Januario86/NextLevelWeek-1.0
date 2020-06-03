@@ -1,4 +1,5 @@
-import express, { response } from 'express';
+import express from 'express';
+import routes from './routes';
 
 const app = express();
 
@@ -10,22 +11,5 @@ const users = [
     'Felizes'
 ];
 
-app.get('/users/:id',(request, response) => {
-
-    const id = Number(request.params.id);
-    
-    const user = users[id];
-
-    return response.json(user);    
-});
-
-app.post('/users', (request, response) => {
-   
-    const user ={
-        name: 'Felipe',
-        email:'januario86fp@gmail.com'
-    };
-    return response.json(user);
-});
 
 app.listen(3333)
