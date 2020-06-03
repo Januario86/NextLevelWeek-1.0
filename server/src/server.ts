@@ -3,13 +3,7 @@ import routes from './routes';
 
 const app = express();
 
-const users = [
-    'Felipe',
-    'Miguel',
-    'Maria',
-    'Gabriel',
-    'Felizes'
-];
-
+app.use (express.json());
+app.use(routes);
 
 app.listen(3333)
