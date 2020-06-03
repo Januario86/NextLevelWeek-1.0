@@ -1,6 +1,6 @@
 # O Ecoleta é uma aplicação Web e Mobile para ajudar pessoas a encontrarem pontos de coleta para reciclagem.
 <h3 align="center">
-    <img alt="Logo" title="#logo" width="300px" src=".assets/home-background.svg">
+    <img alt="Logo" title="#logo" width="300px" src="assets/home-background.svg">
     <br><br>
     
 </h3>
