@@ -1,47 +1,45 @@
-# Ecoleta -  é uma aplicação que auxilia pessoas a encontrarem pontos de coleta para reciclagem. 
+# Ecoleta -  This is a web and mobile application to get find a  recycled points of collect
 <h3 align="center">
     <img alt="Logo" title="#logo" width="300px" src="assets/home-background.svg">
     <br><br>
     
 </h3>
-##:rocket: Abaixo temos as Tecnologias Utilizadas no Projeto
+##:rocket: Tecnologies usage in the project
 
 - [ReactJS](https://reactjs.org/)
 - [React Native](https://reactnative.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Node.js](https://nodejs.org/en/)
 
-## Como iniciar o **Node.JS**
-### Para iniciar um projeto node utilizar:
+## How to start a into the project **Node.JS**
+
 ```bash
 $ npm init -y
 $ npm install express
 ```
 <br/>
 
-## Configurando e Utilizando **TypeScript**
-### Tipagem para o *express*
+## Configuration and Using **TypeScript**
 ```bash
 $ npm install @types/express -D
 ```
-**Obs:** "-D" para dependência de desenvolvimento! 
 <br/>
 
-### Instalando o TypeScript
+### Install of TypeScript
 ```bash
 $ npm install ts-node -D
 $ npm install typescript -D
 ```
 <br/>
 
-### Criando arquivo de configuração TypeScript
+### C TypeScript
 ```bash
 $ npx tsc --init
 ```
 <br/>
 
 ## Configurando **ts-node-dev** no package.json
-### Para reiniciar automaticamente o servidor ao salvar arquivos. 
+### automatic restart server at save updates
 Em *package.json*:
 ```json
 "scripts": {
@@ -55,10 +53,13 @@ $ yarn dev
 ```
 <br/>
 
-## Iniciando projeto React
+## Start project React
 ```bash
 $ npx create-react-app web --template=typescript
 ```
-##Instalando o Knex para banco de dados
+## Install Knex and sqllite3 database
 ````bash
 $ npm install knex
+$ npm install sqllite3
+
+
