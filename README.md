@@ -44,6 +44,7 @@ Em *package.json*:
 ```json
 "scripts": {
   "dev": "ts-node-dev src/server.ts"
+  "knex:migrate":"knex migrate:latest --knexfile knexfile.ts migrate:latest"
 }
 ```
 ```bash
@@ -61,5 +62,10 @@ $ npx create-react-app web --template=typescript
 ````bash
 $ npm install knex
 $ npm install sqlite3
+```
+<br/>
+## Execute Knex Migrations
+````bash
 
+$ npx knex migrate:lastest --knexfile <nameFile.ts> migrate:latest
 
