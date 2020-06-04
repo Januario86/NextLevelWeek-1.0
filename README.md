@@ -65,7 +65,7 @@ $ npm install sqlite3
 ```
 <br/>
 ## Execute Knex Migrations
-````bash
+```bash
 
 $ npx knex migrate:lastest --knexfile <nameFile.ts> migrate:latest
 
