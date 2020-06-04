@@ -11,7 +11,7 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Node.js](https://nodejs.org/en/)
 
-## How to start a into the project **Node.JS**
+## start project **Node.JS**
 
 ```bash
 $ npm init -y
@@ -32,13 +32,13 @@ $ npm install typescript -D
 ```
 <br/>
 
-### C TypeScript
+### TypeScript
 ```bash
 $ npx tsc --init
 ```
 <br/>
 
-## Configurando **ts-node-dev** no package.json
+## Config **ts-node-dev** no package.json
 ### automatic restart server at save updates
 Em *package.json*:
 ```json
@@ -57,9 +57,9 @@ $ yarn dev
 ```bash
 $ npx create-react-app web --template=typescript
 ```
-## Install Knex and sqllite3 database
+## Install Knex and sqlite3 database
 ````bash
 $ npm install knex
-$ npm install sqllite3
+$ npm install sqlite3
 
 
