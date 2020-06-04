@@ -43,7 +43,7 @@ $ npx tsc --init
 Em *package.json*:
 ```json
 "scripts": {
-  "dev": "ts-node-dev src/server.ts"
+  "dev": "ts-node-dev --ignore node_modules src/server.ts"
   "knex:migrate":"knex migrate:latest --knexfile knexfile.ts migrate:latest"
 }
 ```
@@ -64,6 +64,7 @@ $ npm install knex
 $ npm install sqlite3
 ```
 <br/>
+
 ## Execute Knex Migrations
 ```bash
 
