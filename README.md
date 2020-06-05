@@ -59,7 +59,7 @@ $ yarn dev
 $ npx create-react-app web --template=typescript
 ```
 ## Install Knex and sqlite3 database
-````bash
+```bash
 $ npm install knex
 $ npm install sqlite3
 ```
