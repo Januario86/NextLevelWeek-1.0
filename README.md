@@ -69,4 +69,11 @@ $ npm install sqlite3
 ```bash
 
 $ npx knex migrate:lastest --knexfile <nameFile.ts> migrate:latest
+```
+<br/>
+
+## Fonte de Ícones
+```bash
+$ npm install react-icons
+```
 
