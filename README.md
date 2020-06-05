@@ -74,14 +74,20 @@ $ npx knex migrate:lastest --knexfile <nameFile.ts> migrate:latest
 ```
 <br/>
 
-## Fonte de Ícones
+## Fonts de Icons
 ```bash
 $ npm install react-icons
 ```
 <br/>
 
-## Rotas
+## Routes
 ```bash
 $ npm install react-router-dom -D
 ```
+<br/>
+
+## Maps
+```bash
+$ npm install leaflet react-leaflet
+
 <br/>
