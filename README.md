@@ -78,4 +78,9 @@ $ npx knex migrate:lastest --knexfile <nameFile.ts> migrate:latest
 ```bash
 $ npm install react-icons
 ```
-
+<br/>
+## Rotas
+```bash
+$ npm install react-router-dom -D
+````
+<br/>
