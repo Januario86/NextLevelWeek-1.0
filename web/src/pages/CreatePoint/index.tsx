@@ -8,12 +8,20 @@ import './styles.css';
 
 import logo from '../../assets/logo.svg';
 
+interface Item{
+    id:number;
+    title: string;
+    image_url: string;
+}
+
+
 const CreatePoint = () =>{
     
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState<Item[]>([]);
     useEffect(() => {
-        api.get('items').then(response =>{
+        api.get('items').then(response => {
             setItems(response.data);
+           
         });
     }, []);
 
@@ -105,9 +113,9 @@ const CreatePoint = () =>{
 
                     <ul className="items-grid">
                         {items.map(item => (                        
-                            <li>
-                                <img src="http://localhost:3333/uploads/oleo.svg" alt="oleo"/>
-                                <span>Óleo de Cozinha</span>
+                            <li key={item.id}>
+                                <img src={item.image_url} alt={item.title}/>
+                                <span>{item.title}</span>
                             </li>
                         ))}
                     </ul>
