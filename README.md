@@ -89,5 +89,6 @@ $ npm install react-router-dom -D
 ## Maps
 ```bash
 $ npm install leaflet react-leaflet
+```
 
 <br/>
