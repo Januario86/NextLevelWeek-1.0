@@ -4,7 +4,7 @@
     <br><br>
     
 </h3>
-##:rocket: Tecnologies usage in the project
+## :rocket: Tecnologies usage in the project
 
 - [ReactJS](https://reactjs.org/)
 - [React Native](https://reactnative.dev/)
