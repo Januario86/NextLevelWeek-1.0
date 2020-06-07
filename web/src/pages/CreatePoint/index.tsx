@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {FiArrowLeft} from 'react-icons/fi';
 import {Map,TileLayer,Marker} from 'react-leaflet';
 import axios from 'axios';
+import {LeafletMouseEvent} from 'leaflet';
 import api from '../../services/api';
 
 import './styles.css';
@@ -28,7 +29,28 @@ const CreatePoint = () =>{
     const [items, setItems] = useState<Item[]>([]);
     const [ufs, setUfs] = useState<string[]>([]);
     const [cities,setCities] = useState<string[]>([]);
+
+    const [initialPosition,setInitialPosition] = useState<[number,number]>([0,0]);
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email:'',
+        whatsapp:'',
+    });
+
     const [selectedUf,setSelectedUf] = useState('0');
+    const [selectedCity,setSelectedCity] = useState('0');
+    const [selectedItems, setSelectedItems] = useState<number[]>([]);
+    const [selectedPosition,setSelectedPosition] = useState<[number,number]>([0,0]);
+
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(position =>{
+            const {latitude, longitude} = position.coords;
+
+            setInitialPosition([latitude, longitude]);
+        });
+    },[]);
 
     useEffect(() => {
         api.get('items').then(response => {
@@ -59,11 +81,42 @@ const CreatePoint = () =>{
 
     },[selectedUf]);
 
-    function handleSelectedUf(event: ChangeEvent<HTMLSelectElement>){
+    function handleSelectUf(event: ChangeEvent<HTMLSelectElement>){
         const uf = event.target.value;
         
         setSelectedUf(uf);
        
+    }
+
+    function handleSelectCity(event: ChangeEvent<HTMLSelectElement>){
+        const city = event.target.value;
+        
+        setSelectedCity(city);
+       
+    }
+    function handleMapClick(event: LeafletMouseEvent){
+        setSelectedPosition([
+            event.latlng.lat,
+            event.latlng.lng,
+        ])    
+    }
+
+    function handleInputChange(event: ChangeEvent<HTMLInputElement>){
+        const {name, value } = event.target;
+        
+        setFormData({ ...formData, [name]:value})
+    }
+
+    function handleSelectItem(id: number){
+        const alreadySelected = selectedItems.findIndex(item => item === id);
+
+        if(alreadySelected >= 0){
+            const filteredItems = selectedItems.filter(item => item !== id);
+            
+            setSelectedItems(filteredItems);
+        }else{
+            setSelectedItems([... selectedItems, id]);
+        }       
     }
 
     return (
@@ -90,6 +143,7 @@ const CreatePoint = () =>{
                             type="text"
                             name="name"
                             id="name"
+                            onChange={handleInputChange}
                         />
                     </div>
 
@@ -100,6 +154,7 @@ const CreatePoint = () =>{
                                 type="email"
                                 name="email"
                                 id="email"
+                                onChange={handleInputChange}
                             />
                         </div>
                         <div className='field'>
@@ -108,6 +163,7 @@ const CreatePoint = () =>{
                                 type="text"
                                 name="whatsapp"
                                 id="whatsapp"
+                                onChange={handleInputChange}
                             />
                         </div>
                     </div>
@@ -119,13 +175,13 @@ const CreatePoint = () =>{
                         <span>Selecione o endereço no mapa</span>
                     </legend>
 
-                    <Map center={[-22.9111438,-43.1670642]} zoom={15}>
+                    <Map center={[-22.8147195,-43.4218273]} zoom={15} onClick={handleMapClick}>
                         <TileLayer
                             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
 
-                        <Marker position={[-22.9111438,-43.1670642]}/>
+                        <Marker position={selectedPosition}/>
                     </Map>
 
                     <div className="field-group">
@@ -135,7 +191,7 @@ const CreatePoint = () =>{
                                 name="uf" 
                                 id="uf" 
                                 value={selectedUf} 
-                                onChange={handleSelectedUf}
+                                onChange={handleSelectUf}
                             >
                                 <option value="0">Selecione uma UF</option>
                                 {ufs.map(uf => (
@@ -145,7 +201,12 @@ const CreatePoint = () =>{
                         </div>
                         <div className="field">
                             <label htmlFor="city">Cidade</label>
-                            <select name="city" id="uf">
+                            <select 
+                                name="city" 
+                                id="uf"
+                                value={selectedCity}
+                                onChange={handleSelectCity}
+                            >
                                 <option value="0">Selecione uma cidade</option>
                                 {cities.map(city =>(
                                     <option key={city} value={city}>{city}</option>
@@ -164,7 +225,10 @@ const CreatePoint = () =>{
 
                     <ul className="items-grid">
                         {items.map(item => (                        
-                            <li key={item.id}>
+                            <li key={item.id} 
+                                onClick={() => handleSelectItem(item.id)}
+                                className={selectedItems.includes(item.id) ? 'selected' : ''}
+                            >
                                 <img src={item.image_url} alt={item.title}/>
                                 <span>{item.title}</span>
                             </li>
