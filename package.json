@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "is-alphanumerical": "1.0.0",
+    "lodash": "^4.17.15",
+    "lodash.template": "^4.5.0",
     "serialize-javascript": "^3.1.0"
   }
 }
