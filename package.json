@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "is-alphanumerical": "1.0.0",
     "serialize-javascript": "^3.1.0"
   }
 }
